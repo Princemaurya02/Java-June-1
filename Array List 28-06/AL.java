@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public record AL() {
     public static void main(String args[]) {
 
@@ -19,4 +20,10 @@ public record AL() {
        swap(list, idx1, idx2);
        System.out.println(list);
         }
+
+    private static void swap(ArrayList<Integer> list, int i, int j) {
+        Integer tmp = list.get(i);
+        list.set(i, list.get(j));
+        list.set(j, tmp);
+    }
     }
