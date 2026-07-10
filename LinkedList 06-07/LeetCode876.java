@@ -8,16 +8,42 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+public class LeetCode876 {
     public ListNode middleNode(ListNode head) {
-        
-        ListNode slow = head;
-        ListNode Fast = head;
+        if (head == null) {
+            return null;
+        }
 
-        while(Fast != null && Fast.next != null) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
             slow = slow.next;
-            Fast = Fast.next.next;
+            fast = fast.next.next;
         }
         return slow;
+    }
+    public static void main(String[] args) {
+        LeetCode876 solution = new LeetCode876();
+
+        // Create a linked list: 1 -> 2 -> 3 -> 4 -> 5
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        // Find the middle node
+        ListNode middle = solution.middleNode(head);
+
+        // Print the value of the middle node
+        System.out.println("Middle Node Value: " + middle.val); // Output: Middle Node Value: 3
     }
 }
