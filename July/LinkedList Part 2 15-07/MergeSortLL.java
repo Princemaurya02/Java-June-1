@@ -2,7 +2,7 @@
 public class MergeSortLL {
 
     // Node Class
-    static class Node {
+    public static class Node {
         int data;
         Node next;
 

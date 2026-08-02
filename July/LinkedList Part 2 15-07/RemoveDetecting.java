@@ -40,7 +40,16 @@ public class RemoveDetecting {
             slow = slow.next;
             fast = fast.next;
         }
-        prev.next = null; // Remove the cycle
+        if (prev == null) {
+            while (fast != null && fast.next != slow) {
+                fast = fast.next;
+            }
+            if (fast != null) {
+                fast.next = null;
+            }
+        } else {
+            prev.next = null; // Remove the cycle
+        }
 
     }
 
@@ -61,7 +70,7 @@ public class RemoveDetecting {
     public static void main(String[] args) {
 
         head = new Node(1);
-        Node temp = head;
+        Node temp;
         head.next = new Node(2);
         temp = head.next;
 

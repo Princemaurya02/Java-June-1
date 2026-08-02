@@ -1,6 +1,7 @@
 public class DetectingCycle {
 
     static class Node {
+        @SuppressWarnings("unused")
         int data;
         Node next;
 

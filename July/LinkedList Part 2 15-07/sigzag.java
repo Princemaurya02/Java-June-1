@@ -1,11 +1,15 @@
 public class sigzag {
     static class Node {
-        int data;
+        private final int data;
         Node next; 
 
         Node(int data) {
             this.data = data;
             this.next = null;
+        }
+
+        int getData() {
+            return data;
         }
     }
 
